@@ -1,0 +1,229 @@
+/**
+ * ExampleVendor_PageBuilderExampleBanner
+ *
+ * @category ExampleVendor
+ * @package  ExampleVendor_PageBuilderExampleBanner
+ * @author   John Doe <info@scandiweb.com>
+ */
+
+@font-face {
+    font-family: 'RobotoCondensed';
+    font-weight: bold;
+    font-display: fallback;
+    src: local("RobotoCondensed Bold"), local("RobotoCondensed-Bold"), url('@{baseDir}fonts/RobotoCondensed-Bold.woff2') format("woff2");
+}
+
+:root {
+    --max-example-banner-width: 1380px;
+}
+
+a {
+    &:active, &:focus, &:visited {
+        color: inherit;
+    }
+}
+
+.ExampleBanner {
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    overflow: hidden;
+    max-width: var(--max-example-banner-width);
+    margin: 40px 15px;
+    background-color: #f9f9f9;
+    position: relative;
+
+    span {
+        font-family: RobotoCondensed, sans-serif;
+    }
+
+    &-Description {
+        padding: 20px 10px;
+
+        &Title {
+            font-family: RobotoCondensed, sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        &Steps {
+            display: flex;
+            margin: 15px 0;
+            width: 100%;
+            -webkit-flex-direction: column;
+            flex-direction: column;
+            z-index: 2;
+            position: relative;
+        }
+
+        &StepWrapper {
+            margin: 5px 0;
+            display: flex;
+            -webkit-align-items: center;
+            align-items: center;
+        }
+
+        &StepContent {
+            display: flex;
+            -webkit-align-content: center;
+            align-content: center;
+            -webkit-align-items: center;
+            align-items: center;
+            background: #f9f9f9;
+            border: 1px solid #a6a6a6;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        &StepText {
+            margin: 7px 5px 7px 0;
+            font-family: RobotoCondensed, sans-serif;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 24px;
+
+            &_number {
+                margin: 0 5px 0;
+            }
+        }
+
+        &Actions {
+            .Button {
+                text-decoration: none;
+                display: inline-block;
+                border-radius: 3px;
+                font-weight: 700;
+                text-align: center;
+                text-transform: uppercase;
+                color: #fff;
+                transition-property: background-color,color,border;
+                will-change: background-color,color,border;
+                transition-timing-function: ease-out;
+                transition-duration: .25s;
+                cursor: pointer;
+                border: 1px solid #000;
+                background: #000;
+                padding: 12px 0;
+                font-size: 16px;
+                font-family: RobotoCondensed, sans-serif;
+                width: 100%;
+
+                &:hover {
+                    text-decoration: none;
+                    color: #fff;
+                    border-color: #c70000;
+                    background-color: #c70000;
+                }
+            }
+        }
+    }
+
+    &-Icon {
+        padding: 6px 15px;
+
+        img {
+            width: 32px;
+            height: 32px;
+            max-width: none;
+        }
+    }
+
+    &-BannerImage {
+        max-height: 300px;
+        overflow: hidden;
+        object-fit: cover;
+        z-index: 1;
+    }
+}
+
+@media (min-width: 1024px) {
+    .ExampleBanner {
+        background-color: initial;
+        -webkit-flex-direction: row-reverse;
+        flex-direction: row-reverse;
+        margin: 40px auto;
+
+        &-Description {
+            background-color: #f9f9f9;
+            padding: 45px 40px;
+            width: 100%;
+
+            &Title {
+                padding-block-end: 10px;
+                max-width: 38%;
+                font-size: 32px;
+            }
+
+            &Steps {
+                -webkit-flex-direction: row;
+                flex-direction: row;
+            }
+
+            &StepWrapper {
+                margin: 0 5px;
+                text-align: center;
+
+                &:first-child {
+                    margin-inline-start: 0;
+                }
+
+                span {
+                    display: block;
+                }
+            }
+
+            &StepContent {
+                width: 198px;
+                height: 100%;
+                -webkit-flex-direction: column;
+                flex-direction: column;
+                padding: 15px 0 25px;
+            }
+
+            &StepText {
+                margin: 0;
+                padding: 0 15px;
+                font-size: 20px;
+
+                &_number {
+                    margin: 0 0 7px;
+                }
+            }
+
+            &Actions {
+                padding-block-start: 20px;
+
+                .Button {
+                    width: auto;
+                    padding: 12px 36px;
+                    border-radius: 6px;
+
+                    &:hover {
+                        padding: 12px 36px;
+                        border-radius: 6px;
+                    }
+                }
+            }
+        }
+
+        &-Icon {
+            padding: 15px;
+
+            img {
+                width: 40px;
+                height: 40px;
+            }
+        }
+
+        &-BannerImage {
+            margin: 0 15px;
+            position: absolute;
+            max-height: none;
+            width: 60%;
+            height: 100%;
+            padding: 0;
+            background-color: initial;
+        }
+    }
+}

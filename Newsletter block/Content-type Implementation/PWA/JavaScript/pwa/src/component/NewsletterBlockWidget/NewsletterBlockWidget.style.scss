@@ -1,0 +1,315 @@
+/**
+ * @vendor      Scandiweb
+ * @theme       Scandipwa_pwa
+ * @author      Scandiweb <info@scandiweb.com>
+ * @copyright   Copyright (c) 2022 Scandiweb, Ltd (https://scandiweb.com)
+ */
+
+:root {
+    --newsletter-content-color: white;
+    --newsletter-background-color: gray;
+    --newsletter-content-width: 1640px;
+    --newsletter-title-font-size: 3.7rem;
+    --newsletter-description-font-size: 1.8rem;
+    --newsletter-form-font-size: 1.7rem;
+    --newsletter-form-info-font-size: 1.6rem;
+    --newsletter-message-title-font-size: 2.8rem;
+    --newsletter-message-description-font-size: 1.8rem;
+    --newsletter-message-dot-font-size: 4.5rem;
+    --newsletter-email-field-height: 24px;
+    --label-background-color: #2196F3;
+
+    @include tablet {
+        --newsletter-title-font-size: 3rem;
+        --newsletter-description-font-size: 1.6rem;
+        --newsletter-form-font-size: 1.5rem;
+        --newsletter-form-info-font-size: 1.4rem;
+        --newsletter-message-title-font-size: 2.5rem;
+        --newsletter-message-description-font-size: 1.6rem;
+        --newsletter-message-dot-font-size: 3.8rem;
+    }
+
+    @include mobile {
+        --newsletter-title-font-size: 2rem;
+        --newsletter-description-font-size: 1.2rem;
+        --newsletter-form-font-size: 1.3rem;
+        --newsletter-form-info-font-size: 1.2rem;
+        --newsletter-message-title-font-size: 1.8rem;
+        --newsletter-message-description-font-size: 1.2rem;
+        --newsletter-message-dot-font-size: 3rem;
+    }
+}
+
+.Newsletter {
+    width: 100%;
+    background-color: var(--newsletter-background-color);
+
+    @include mobile {
+        height: max-content;
+    }
+
+    &-Wrapper {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: max-content;
+        grid-template-areas: 'A' 'B' 'C';
+        width: 100%;
+        height: 100%;
+        max-width: var(--newsletter-content-width);
+        margin: 0 auto;
+        padding: 0 20px;
+
+        @include desktop {
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            grid-template-areas: 'A C' 'B C';
+        }
+    }
+
+    &-Title {
+        font-weight: bold;
+        font-size: var(--newsletter-title-font-size);
+        color: var(--newsletter-content-color);
+
+        &Wrapper {
+            grid-area: A;
+            padding-block-start: 20px;
+
+            @include desktop {
+                padding-block-start: 60px;
+            }
+        }
+    }
+
+    &-Subtitle {
+        &Wrapper {
+            grid-area: B;
+            padding-block-start: 3px;
+
+            @include desktop {
+                padding-block-start: 26px;
+            }
+        }
+
+        &Placeholder {
+            border-style: none;
+            border-width: 1px;
+            border-radius: 0;
+            margin: 0;
+            padding: 0;
+        }
+
+        &Text {
+            font-size: var(--newsletter-description-font-size);
+            color: var(--newsletter-content-color);
+        }
+    }
+
+    &-Actions {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-bottom: 25px;
+
+        @include desktop {
+            width: 75%;
+        }
+
+        &Wrapper {
+            grid-area: C;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+
+            @include mobile {
+                padding-block-start: 15px;
+                padding-block-end: 20px;
+            }
+        }
+    }
+
+    &-Form {
+        display: flex;
+
+        &Icon {
+            top: 40px;
+            left: -5px;
+            width: 30px;
+            height: 21px;
+            margin-block-start: 3px;
+            margin-inline-end: 8px;
+
+            @include desktop {
+                left: -35px;
+                top: 45px;
+            }
+        }
+
+        &Field {
+            &Email {
+                flex: 1;
+                margin: 0 0 15px 0;
+                width: 70%;
+                right: -30px;
+                z-index: 100;
+
+                @include desktop {
+                    width: 85%;
+                    right: 0;
+                }
+            }
+
+            &Input {
+                width: 100%;
+                caret-color: var(--newsletter-content-color);
+                height: var(--newsletter-email-field-height);
+                padding: 0;
+                border: none;
+                background-image: none;
+                box-shadow: none;
+                background-color: transparent;
+                font-size: var(--newsletter-form-font-size);
+                color: var(--newsletter-content-color);
+
+                input {
+                    border-bottom: 1px solid rgb(255, 255, 255);
+                }
+            }
+
+            &Input::placeholder {
+                color: var(--newsletter-content-color);
+            }
+        }
+
+        &Submit {
+            display: flex;
+            height: var(--newsletter-email-field-height);
+            align-items: center;
+            margin-inline-start: 8px;
+            margin-top: -35px;
+            justify-content: flex-end;
+
+            &Button {
+                font-weight: bold;
+                font-size: var(--newsletter-form-font-size);
+                color: var(--newsletter-content-color);
+
+                &:disabled {
+                    opacity: 0.5;
+                    cursor: default;
+                }
+            }
+        }
+    }
+
+    &-TAC {
+        &Wrapper {
+            display: flex;
+            align-items: center;
+            margin-block-start: 30px;
+
+            @include desktop {
+                margin-block-start: 25px;
+            }
+        }
+
+        &Label {
+            display: block;
+            margin-inline-start: 10px;
+        }
+
+        &Text {
+            font-size: var(--newsletter-form-info-font-size);
+            color: var(--newsletter-content-color);
+        }
+
+        &Link {
+            font-weight: bold;
+            font-size: var(--newsletter-form-info-font-size);
+            color: var(--newsletter-content-color);
+            text-decoration: unset;
+        }
+
+        &Link:hover {
+            text-decoration: underline;
+        }
+    }
+
+    &-Checkbox {
+        &Field {
+            margin-block-start: 0;
+
+            .Field {
+                margin-top: 0;
+
+                .input-control {
+                    width: 20px;
+                    height: 20px;
+                    border: none;
+                }
+            }
+        }
+    }
+
+    &-Label {
+        display: block;
+        position: relative;
+        margin-inline-end: 14px;
+        margin-block-end: 12px;
+        cursor: pointer;
+        font-size: 22px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    &-Label input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+    }
+
+    &-Label input:checked ~ &-Checkmark {
+        background-color: var(--label-background-color);
+    }
+
+    &-Label input:checked ~ &-Checkmark::after {
+        display: block;
+    }
+
+    &-Label &-Checkmark::after {
+        inset-inline-start: 9px;
+        inset-block-start: 3px;
+        width: 2px;
+        height: 10px;
+        border: solid white;
+        border-width: 0 3px 3px 0;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
+
+    &-Checkmark {
+        position: absolute;
+        inset-block-start: 0;
+        inset-inline-start: 0;
+        height: 25px;
+        width: 25px;
+        background-color: #eee;
+
+        &::after {
+            content: '';
+            position: absolute;
+            display: none;
+        }
+    }
+
+    &-Label:hover &-Checkmark ~ &-Checkmark {
+        background-color: #ccc;
+    }
+}
+

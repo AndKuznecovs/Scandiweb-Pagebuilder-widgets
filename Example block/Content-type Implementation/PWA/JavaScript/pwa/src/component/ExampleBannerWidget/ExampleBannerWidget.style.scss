@@ -1,0 +1,251 @@
+/**
+ * @vendor      Buff
+ * @theme       Scandipwa_pwa
+ * @author      Scandiweb <info@scandiweb.com>
+ * @copyright   Copyright (c) 2022 Scandiweb, Ltd (https://scandiweb.com)
+ */
+
+@font-face {
+    font-family: 'RobotoCondensed';
+    font-weight: bold;
+    font-display: fallback;
+    src: local("RobotoCondensed Bold"), local("RobotoCondensed-Bold"), url('/../../lib/web/fonts/RobotoCondensed-Bold.woff2') format("woff2");
+}
+
+:root {
+    --max-example-banner-width: 1380px;
+    --banner-background-color: #f9f9f9;
+    --step-content-border-color: #a6a6a6;
+    --button-text-color: #fff;
+    --button-color: #000;
+    --button-hover-color: #c70000;
+}
+
+a {
+    &:active, &:focus, &:visited {
+        color: inherit;
+    }
+}
+
+.ExampleBanner {
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    overflow: hidden;
+    max-width: var(--max-example-banner-width);
+    margin: 40px 15px;
+    background-color: var(--banner-background-color);
+    position: relative;
+
+    @include desktop {
+        background-color: initial;
+        -webkit-flex-direction: row-reverse;
+        flex-direction: row-reverse;
+        margin: 40px auto;
+    }
+
+    span {
+        font-family: RobotoCondensed, sans-serif;
+    }
+
+    &-Description {
+        padding: 20px 10px;
+
+        @include desktop {
+            background-color: var(--banner-background-color);
+            padding: 45px 40px;
+            width: 100%;
+        }
+
+        &Title {
+            font-family: RobotoCondensed, sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 1;
+
+            @include desktop {
+                padding-block-end: 10px;
+                max-width: 38%;
+                font-size: 32px;
+            }
+        }
+
+        &Steps {
+            display: flex;
+            margin: 15px 0;
+            width: 100%;
+            -webkit-flex-direction: column;
+            flex-direction: column;
+            z-index: 2;
+            position: relative;
+
+            @include desktop {
+                -webkit-flex-direction: row;
+                flex-direction: row;
+            }
+        }
+
+        &StepWrapper {
+            margin: 5px 0;
+            display: flex;
+            -webkit-align-items: center;
+            align-items: center;
+
+            @include desktop {
+                margin: 0 5px;
+                text-align: center;
+
+                &:first-child {
+                    margin-inline-start: 0;
+                }
+
+                span {
+                    display: block;
+                }
+            }
+        }
+
+        &StepContent {
+            display: flex;
+            -webkit-align-content: center;
+            align-content: center;
+            -webkit-align-items: center;
+            align-items: center;
+            background: var(--banner-background-color);
+            border: 1px solid var(--step-content-border-color);
+            width: 100%;
+            box-sizing: border-box;
+
+            @include desktop {
+                width: 198px;
+                height: 100%;
+                -webkit-flex-direction: column;
+                flex-direction: column;
+                padding: 15px 0 25px;
+            }
+        }
+
+        &StepText {
+            margin: 7px 5px 7px 0;
+            font-family: RobotoCondensed, sans-serif;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 24px;
+
+            @include desktop {
+                margin: 0;
+                padding: 0 15px;
+                font-size: 20px;
+            }
+
+            &_number {
+                margin: 0 5px 0;
+
+                @include desktop {
+                    margin: 0 0 7px;
+                }
+            }
+        }
+
+        &Actions {
+            @include desktop {
+                padding-block-start: 20px;
+            }
+
+            .Button {
+                text-decoration: none;
+                display: inline-block;
+                border-radius: 3px;
+                font-weight: 700;
+                text-align: center;
+                text-transform: uppercase;
+                color: var(--button-text-color);
+                transition-property: background-color, color, border;
+                will-change: background-color, color, border;
+                transition-timing-function: ease-out;
+                transition-duration: .25s;
+                cursor: pointer;
+                border: 1px solid var(--button-color);
+                background: var(--button-color);
+                padding: 12px 0;
+                font-size: 16px;
+                font-family: RobotoCondensed, sans-serif;
+                width: 100%;
+
+                @include desktop {
+                    width: auto;
+                    padding: 12px 36px;
+                    border-radius: 6px;
+                }
+
+                &:hover {
+                    text-decoration: none;
+                    color: var(--button-text-color);
+                    border-color: var(--button-hover-color);
+                    background-color: var(--button-hover-color);
+
+                    @include desktop {
+                        padding: 12px 36px;
+                        border-radius: 6px;
+                    }
+                }
+            }
+        }
+    }
+
+    &-Icon {
+        padding: 6px 15px;
+
+        @include desktop {
+            padding: 15px;
+        }
+
+        .Image {
+            width: 32px;
+            height: 32px;
+            max-width: none;
+
+            @include desktop {
+                width: 40px;
+                height: 40px;
+            }
+        }
+    }
+
+    &-BannerImage {
+        max-height: 300px;
+        overflow: hidden;
+        object-fit: cover;
+        z-index: 1;
+
+        @include desktop {
+            margin: 0;
+            position: absolute;
+            max-height: none;
+            width: 60%;
+            height: 100%;
+            padding: 0;
+            background-color: initial;
+        }
+
+        .Image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            overflow: hidden;
+
+            @include desktop {
+                width: 100%;
+                height: 100%;
+                padding-bottom: 0;
+                object-fit: cover;
+                overflow: hidden;
+            }
+
+            img {
+                // overriding the default image height in order to adapt to non-wide images
+                height: unset !important;
+            }
+        }
+    }
+}

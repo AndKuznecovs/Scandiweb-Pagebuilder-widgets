@@ -1,0 +1,112 @@
+<!--
+/**
+ * ExampleVendor_PageBuilderExampleBanner
+ *
+ * @category ExampleVendor
+ * @package  ExampleVendor_PageBuilderExampleBanner
+ * @author   John Doe <info@scandiweb.com>
+ */
+-->
+
+<div attr="data.main.attributes"
+     ko-style="data.main.style"
+     class="pagebuilder-content-type"
+     css="data.main.css"
+     event="{ mouseover: onMouseOver, mouseout: onMouseOut }, mouseoverBubble: false"
+>
+    <div translate="'Example Banner'"></div>
+    <div class="ExampleBanner">
+        <div class="ExampleBanner-BannerImage">
+            <img
+                attr="data.banner_image.attributes"
+            />
+        </div>
+        <div class="ExampleBanner-Description">
+            <div class="ExampleBanner-DescriptionTitle">
+                <span
+                    attr="data.banner_title.attributes"
+                    data-bind="liveEdit: { field: 'banner_title', placeholder: $t('Enter Banner Title') }"
+                ></span>
+            </div>
+            <div class="ExampleBanner-DescriptionSteps">
+                <div class="ExampleBanner-DescriptionStepWrapper">
+                    <div class="ExampleBanner-DescriptionStepContent">
+                        <span class="ExampleBanner-Icon">
+                            <img
+                                attr="data.banner_stepone_icon.attributes"
+                            />
+                        </span>
+                        <span class="ExampleBanner-DescriptionStepText">
+                            <span class="ExampleBanner-DescriptionStepText_number">1.</span>
+                            <span
+                                attr="data.banner_stepone_text.attributes"
+                                data-bind="liveEdit: { field: 'banner_stepone_text', placeholder: $t('Enter Step Text') }"
+                            ></span>
+                        </span>
+                    </div>
+                </div>
+                <div class="ExampleBanner-DescriptionStepWrapper">
+                    <div class="ExampleBanner-DescriptionStepContent">
+                        <span class="ExampleBanner-Icon">
+                            <img
+                                attr="data.banner_steptwo_icon.attributes"
+                            />
+                        </span>
+                        <span class="ExampleBanner-DescriptionStepText">
+                            <span class="ExampleBanner-DescriptionStepText_number">2.</span>
+                            <span
+                                attr="data.banner_steptwo_text.attributes"
+                                data-bind="liveEdit: { field: 'banner_steptwo_text', placeholder: $t('Enter Step Text') }"
+                            ></span>
+                        </span>
+                    </div>
+                </div>
+                <div class="ExampleBanner-DescriptionStepWrapper">
+                    <div class="ExampleBanner-DescriptionStepContent">
+                        <span class="ExampleBanner-Icon">
+                            <img
+                                attr="data.banner_stepthree_icon.attributes"
+                            />
+                        </span>
+                        <span class="ExampleBanner-DescriptionStepText">
+                            <span class="ExampleBanner-DescriptionStepText_number">3.</span>
+                            <span
+                                attr="data.banner_stepthree_text.attributes"
+                                data-bind="liveEdit: { field: 'banner_stepthree_text', placeholder: $t('Enter Step Text') }"
+                            ></span>
+                        </span>
+                    </div>
+                </div>
+                <div class="ExampleBanner-DescriptionStepWrapper">
+                    <div class="ExampleBanner-DescriptionStepContent">
+                        <span class="ExampleBanner-Icon">
+                            <img
+                                attr="data.banner_stepfour_icon.attributes"
+                            />
+                        </span>
+                        <span class="ExampleBanner-DescriptionStepText">
+                            <span class="ExampleBanner-DescriptionStepText_number">4.</span>
+                            <span
+                                attr="data.banner_stepfour_text.attributes"
+                                data-bind="liveEdit: { field: 'banner_stepfour_text', placeholder: $t('Enter Step Text') }"
+                            ></span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="ExampleBanner-DescriptionActions">
+                <a
+                    attr="data.banner_button_href.attributes"
+                    data-bind="href: data.banner_button_href.attributes().value"
+                    class="Button"
+                >
+                    <span
+                        attr="data.banner_button_text.attributes"
+                        data-bind="liveEdit: { field: 'banner_button_text', placeholder: $t('Enter Button Text') }"
+                    ></span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <render args="getOptions().template" />
+</div>

@@ -1,0 +1,52 @@
+<!--
+/**
+ * Scandiweb_PageBuilderExampleBanner
+ *
+ * @category Scandiweb
+ * @package  Scandiweb_PageBuilderExampleBanner
+ * @author   Scandiweb <info@scandiweb.com>
+ */
+-->
+
+<!-- ScandiPWA Rendering Example -->
+<widget type="ExampleBanner"
+        data-bind="attr: {
+        'data-banner-title': data.banner_title.html,
+        'data-banner-image-src': data.banner_image.attributes().src,
+        'data-banner-image-alt': data.banner_image.attributes().alt,
+        'data-banner-image-title': data.banner_image.attributes().title,
+        'data-stepone-text': data.banner_stepone_text.html,
+        'data-stepone-icon-src': data.banner_stepone_icon.attributes().src,
+        'data-stepone-icon-alt': data.banner_stepone_icon.attributes().alt,
+        'data-stepone-icon-title': data.banner_stepone_icon.attributes().title,
+        'data-steptwo-text': data.banner_steptwo_text.html,
+        'data-steptwo-icon-src': data.banner_steptwo_icon.attributes().src,
+        'data-steptwo-icon-alt': data.banner_steptwo_icon.attributes().alt,
+        'data-steptwo-icon-title': data.banner_steptwo_icon.attributes().title,
+        'data-stepthree-text': data.banner_stepthree_text.html,
+        'data-stepthree-icon-src': data.banner_stepthree_icon.attributes().src,
+        'data-stepthree-icon-alt': data.banner_stepthree_icon.attributes().alt,
+        'data-stepthree-icon-title': data.banner_stepthree_icon.attributes().title,
+        'data-stepfour-text': data.banner_stepfour_text.html,
+        'data-stepfour-icon-src': data.banner_stepfour_icon.attributes().src,
+        'data-stepfour-icon-alt': data.banner_stepfour_icon.attributes().alt,
+        'data-stepfour-icon-title': data.banner_stepfour_icon.attributes().title,
+        'data-button-url': data.banner_button_href.attributes().value,
+        'data-button-text': data.banner_button_text.html
+    }"
+>
+    <div attr="data.main.attributes">
+        <div attr="data.banner_image.attributes"></div>
+        <div attr="data.banner_title.attributes" html="data.banner_title.html"></div>
+        <div attr="data.banner_button_text.attributes" html="data.banner_button_text.html"></div>
+        <div attr="data.banner_button_href.attributes"></div>
+        <div attr="data.banner_stepone_icon.attributes"></div>
+        <div attr="data.banner_stepone_text.attributes" html="data.banner_stepone_text.html"></div>
+        <div attr="data.banner_steptwo_icon.attributes"></div>
+        <div attr="data.banner_steptwo_text.attributes" html="data.banner_steptwo_text.html"></div>
+        <div attr="data.banner_stepthree_icon.attributes"></div>
+        <div attr="data.banner_stepthree_text.attributes" html="data.banner_stepthree_text.html"></div>
+        <div attr="data.banner_stepfour_icon.attributes"></div>
+        <div attr="data.banner_stepfour_text.attributes" html="data.banner_stepfour_text.html"></div>
+    </div>
+</widget>

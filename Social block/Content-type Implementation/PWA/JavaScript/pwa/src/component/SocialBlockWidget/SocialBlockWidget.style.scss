@@ -1,0 +1,160 @@
+/**
+ * @vendor      Scandiweb
+ * @theme       Scandipwa_pwa
+ * @author      Scandiweb <info@scandiweb.com>
+ * @copyright   Copyright (c) 2022 Scandiweb, Ltd (https://scandiweb.com)
+ */
+
+:root {
+    --background-color: rgb(202, 199, 199);
+    --font-color: black;
+}
+
+.SocialBlock {
+    max-width: 1380px;
+
+
+    &-SocialMedia {
+        justify-content: flex-start;
+        display: flex;
+        flex-direction: column;
+        background-color: var(--background-color);
+        background-position: left top;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+        border-style: none;
+        border-width: 1px;
+        border-radius: 0;
+        margin: 0;
+        padding: 0;
+
+        &Title {
+            color: var(--font-color);
+            padding: 15px 10px 0;
+            margin-inline: auto;
+            font-size: 30px;
+            font-weight: bold;
+            line-height: 50px;
+            letter-spacing: 0;
+
+            @include desktop {
+                font-size: 50px;
+                padding: 15px 10px;
+                line-height: 60px;
+            }
+        }
+
+        &Slogan {
+            color: var(--font-color);
+            padding: 5px;
+            margin-inline: auto;
+            font-size: 20px;
+            font-weight: bold;
+            line-height: 30px;
+            letter-spacing: 0;
+
+            @include desktop {
+                font-size: 30px;
+            }
+        }
+
+        &List {
+            display: flex;
+            margin: auto;
+            width: 90%;
+
+            @include desktop {
+                width: 80%;
+            }
+
+            &Wrapper {
+                justify-content: center;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                background-position: left top;
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-attachment: scroll;
+                border-style: none;
+                border-width: 1px;
+                border-radius: 0;
+                margin-block-start: 10px;
+                margin-block-end: 0;
+                padding: 0;
+                align-self: stretch;
+                margin-inline: auto;
+                width: 100%;
+
+                @include desktop {
+                    justify-content: space-between;
+                }
+            }
+
+            &Content {
+                border-style: none;
+                border-width: 1px;
+                border-radius: 0;
+                padding: 0;
+                text-align: center;
+                width: 30%;
+
+                @include desktop {
+                    width: 20%;
+                }
+            }
+
+            &Text {
+                color: var(--font-color);
+                font-size: 13px;
+                line-height: 24px;
+
+                @include desktop {
+                    font-size: 18px;
+                }
+
+                &Holder {
+                    position: relative;
+                    margin-block-start: 10px;
+                    vertical-align: middle;
+                }
+            }
+
+            &Figure {
+                margin: 0;
+                border-style: none;
+                padding: 0 20px;
+
+                a {
+                    height: 0;
+                    width: 0;
+                }
+
+                .Image {
+                    margin: 0 auto;
+                    border-style: none;
+                    border-width: 1px;
+                    border-radius: 0;
+                    max-height: 88px;
+                    width: 80%;
+                    padding-bottom: 60%;
+                    -webkit-transform: scale(1);
+                    transform: scale(1);
+                    -webkit-transition: .3s ease-in-out;
+                    transition: .3s ease-in-out;
+
+                    @include desktop {
+                        width: 50%;
+                        padding-bottom: 50%;
+                    }
+
+                    &:hover {
+                        -webkit-transform: scale(1.2);
+                        transform: scale(1.2);
+                    }
+                }
+            }
+        }
+    }
+}
