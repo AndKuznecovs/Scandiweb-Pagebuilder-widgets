@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Scandiweb_PageBuilderBannerBlock
+ *
+ * @category Scandiweb
+ * @package  Scandiweb_PageBuilderBannerBlock
+ * @author   Scandiweb <info@scandiweb.com>
+ */
+-->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
+    <module name="Scandiweb_PageBuilderBannerBlock"/>
+</config>
